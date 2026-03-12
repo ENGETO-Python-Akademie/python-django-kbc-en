@@ -1,0 +1,3046 @@
+# ENGETO Python/JS Bootcamp - Nuomy Course Outline
+#
+# Source: Client specification (3-hour lessons → 60-minute Nuomy courses)
+# Total original lessons: 22
+# Total Nuomy courses: 66 (22 × 3)
+#
+# Structure:
+# - Each original 3-hour lesson is split into 3 logical 60-minute courses
+# - Breakpoints are based on content flow, not mechanical splits
+# - Level: beginner to intermediate
+#
+# =============================================================================
+
+cases:
+  # ===========================================================================
+  # LESSON 1: Introduction to OOP in Python (Python, OOP)
+  # Original content: introduction, motivation, class, instance, properties
+  # ===========================================================================
+
+  - caseId: engeto-oop-001-motivation
+    context:
+      level: beginner
+      timeBudgetMinutes: 60
+      preferences: [practical, hands-on]
+      constraints: []
+      parentLesson: "Introduction to OOP in Python"
+      lessonNumber: 1
+      partNumber: 1
+
+    expectedScenario:
+      mustHave:
+        - "Learner role: Python developer starting with OOP"
+        - "Context: transitioning from procedural programming to object-oriented"
+        - "Concrete goal: understand why OOP exists and when to use it"
+      mustAvoid:
+        - "Too much abstraction without practical examples"
+        - "Jumping straight into syntax without motivation"
+        - "Comparing with other languages"
+      golden:
+        summary: |
+          You're a Python developer who can write functions and procedural code.
+          Now you want to learn OOP to write better organized and reusable code.
+
+    expectedConcepts:
+      mustHave:
+        - "Why OOP was created - limits of procedural programming"
+        - "Core idea - data and behavior together"
+        - "When to use OOP and when not to"
+        - "Real-world examples (games, applications, frameworks)"
+      mustAvoid:
+        - "Class definitions and syntax (comes in next course)"
+        - "Advanced concepts (inheritance, polymorphism)"
+        - "Academic definitions without context"
+      golden:
+        concepts:
+          - name: "Limits of procedural code"
+            description: "Why functions and global data aren't enough for larger projects."
+          - name: "OOP as an organizational principle"
+            description: "Core idea - combining data and operations into one unit."
+          - name: "When OOP makes sense"
+            description: "Practical situations where OOP solves real problems."
+          - name: "OOP in the real world"
+            description: "Examples from frameworks and libraries you use daily."
+
+  - caseId: engeto-oop-002-classes
+    context:
+      level: beginner
+      timeBudgetMinutes: 60
+      preferences: [hands-on, practical]
+      constraints: ["follows OOP motivation"]
+      parentLesson: "Introduction to OOP in Python"
+      lessonNumber: 1
+      partNumber: 2
+
+    expectedScenario:
+      mustHave:
+        - "Learner role: Python developer ready to write first class"
+        - "Context: understands OOP motivation, now needs syntax"
+        - "Concrete goal: define own class in Python"
+      mustAvoid:
+        - "Repeating motivation (already covered)"
+        - "Instances and their creation (next course)"
+        - "Advanced methods (__init__ details)"
+      golden:
+        summary: |
+          You understand why OOP exists and now you'll learn how to define your own class in Python.
+          The goal is to understand class syntax and basic structure.
+
+    expectedConcepts:
+      mustHave:
+        - "Python class syntax"
+        - "Class as template/blueprint"
+        - "Basic class structure"
+        - "Naming conventions (PascalCase)"
+      mustAvoid:
+        - "Creating instances (next course)"
+        - "Inheritance and advanced concepts"
+        - "Special methods except basic __init__"
+      golden:
+        concepts:
+          - name: "Class syntax"
+            description: "How to write first class - class keyword and structure."
+          - name: "Class as blueprint"
+            description: "Class defines structure, instances are concrete objects."
+          - name: "Conventions and best practices"
+            description: "Naming, code organization, Python style guide."
+          - name: "Your first class"
+            description: "Practical exercise - define a class for a real use case."
+
+  - caseId: engeto-oop-003-instances
+    context:
+      level: beginner
+      timeBudgetMinutes: 60
+      preferences: [hands-on, practical]
+      constraints: ["follows class definition"]
+      parentLesson: "Introduction to OOP in Python"
+      lessonNumber: 1
+      partNumber: 3
+
+    expectedScenario:
+      mustHave:
+        - "Learner role: developer who can define a class"
+        - "Context: needs to create and use objects"
+        - "Concrete goal: create instances and work with properties"
+      mustAvoid:
+        - "Repeating class definitions"
+        - "Methods (except __init__)"
+        - "Inheritance"
+      golden:
+        summary: |
+          You can define a class and now you'll learn to create instances and work with their properties.
+          The goal is to understand how objects live in memory and how to interact with them.
+
+    expectedConcepts:
+      mustHave:
+        - "Creating instances (constructor)"
+        - "__init__ method and self"
+        - "Instance attributes vs class attributes"
+        - "Accessing properties (dot notation)"
+      mustAvoid:
+        - "Methods except __init__"
+        - "Inheritance and advanced concepts"
+        - "Memory management details"
+      golden:
+        concepts:
+          - name: "Creating instances"
+            description: "How to create a concrete object from a class."
+          - name: "__init__ and self"
+            description: "Constructor and reference to current instance."
+          - name: "Instance vs class attributes"
+            description: "Difference between instance data and data shared by all instances."
+          - name: "Working with objects"
+            description: "Accessing properties, modification, object lifecycle."
+
+  # ===========================================================================
+  # LESSON 2: Attributes and Class Properties (Python, OOP)
+  # Original content: method types, underscores and their function
+  # ===========================================================================
+
+  - caseId: engeto-oop-004-attributes
+    context:
+      level: beginner-intermediate
+      timeBudgetMinutes: 60
+      preferences: [practical, hands-on]
+      constraints: ["knows OOP basics - classes and instances"]
+      parentLesson: "Attributes and Class Properties"
+      lessonNumber: 2
+      partNumber: 1
+
+    expectedScenario:
+      mustHave:
+        - "Learner role: developer with OOP basics"
+        - "Context: needs to better organize data in classes"
+        - "Concrete goal: understand attribute types and when to use each"
+      mustAvoid:
+        - "Class basics (already covered)"
+        - "Methods (next course)"
+        - "Inheritance"
+      golden:
+        summary: |
+          You can create classes and instances. Now you'll learn how to properly organize
+          attributes - when to use instance attribute, when class attribute, and how to protect them.
+
+    expectedConcepts:
+      mustHave:
+        - "Instance attributes vs class attributes"
+        - "Mutable vs immutable attributes"
+        - "Property decorator basics"
+        - "Getters and setters in Python"
+      mustAvoid:
+        - "Class methods"
+        - "Underscores and conventions (next course)"
+        - "Descriptors"
+      golden:
+        concepts:
+          - name: "Attribute types"
+            description: "Instance attributes, class attributes, and when to use each."
+          - name: "Mutable default argument trap"
+            description: "Common mistake with mutable default values and how to avoid it."
+          - name: "Property decorator"
+            description: "How to create controlled access to attributes."
+          - name: "Getters and setters"
+            description: "Pythonic way of validation and value transformation."
+
+  - caseId: engeto-oop-005-methods
+    context:
+      level: beginner-intermediate
+      timeBudgetMinutes: 60
+      preferences: [hands-on, practical]
+      constraints: ["knows attributes and property"]
+      parentLesson: "Attributes and Class Properties"
+      lessonNumber: 2
+      partNumber: 2
+
+    expectedScenario:
+      mustHave:
+        - "Learner role: developer expanding OOP knowledge"
+        - "Context: needs to understand different method types"
+        - "Concrete goal: properly use instance, class and static methods"
+      mustAvoid:
+        - "Method basics (self)"
+        - "Abstract methods (will be with inheritance)"
+        - "Magic methods except basics"
+      golden:
+        summary: |
+          You know attributes and now you'll learn differences between method types.
+          When to use regular method, when @classmethod and when @staticmethod.
+
+    expectedConcepts:
+      mustHave:
+        - "Instance methods and self"
+        - "@classmethod and cls"
+        - "@staticmethod - when and why"
+        - "Factory methods pattern"
+      mustAvoid:
+        - "Magic/dunder methods"
+        - "Abstract methods"
+        - "Method resolution order"
+      golden:
+        concepts:
+          - name: "Instance methods"
+            description: "Regular methods working with specific instance via self."
+          - name: "@classmethod"
+            description: "Methods working with class, not instance - factory pattern."
+          - name: "@staticmethod"
+            description: "Utility functions that logically belong to the class."
+          - name: "When to use what"
+            description: "Practical rules for choosing the right method type."
+
+  - caseId: engeto-oop-006-underscores
+    context:
+      level: beginner-intermediate
+      timeBudgetMinutes: 60
+      preferences: [practical]
+      constraints: ["knows method types and attributes"]
+      parentLesson: "Attributes and Class Properties"
+      lessonNumber: 2
+      partNumber: 3
+
+    expectedScenario:
+      mustHave:
+        - "Learner role: developer learning Python conventions"
+        - "Context: needs to understand visibility and naming conventions"
+        - "Concrete goal: properly use underscores and protect implementation"
+      mustAvoid:
+        - "Inheritance and MRO"
+        - "All magic methods"
+        - "Metaclasses"
+      golden:
+        summary: |
+          You know methods and attributes. Now you'll learn Python visibility conventions -
+          what underscores mean and how to properly mark private members.
+
+    expectedConcepts:
+      mustHave:
+        - "Single underscore _name convention"
+        - "Double underscore __name name mangling"
+        - "Dunder methods __name__ basics"
+        - "Public API vs implementation details"
+      mustAvoid:
+        - "Complete list of magic methods"
+        - "Descriptors"
+        - "Metaclasses"
+      golden:
+        concepts:
+          - name: "Single underscore _name"
+            description: "Convention for 'internal use' - what it means and how to respect it."
+          - name: "Double underscore __name"
+            description: "Name mangling - real protection against collisions."
+          - name: "Dunder methods __name__"
+            description: "Python special methods - __init__, __str__, __repr__."
+          - name: "Public API design"
+            description: "How to decide what to expose and what to hide."
+
+  # ===========================================================================
+  # LESSON 3: Inheritance and Abstraction (Python, OOP)
+  # Original content: polymorphism, encapsulation, inheritance, abstraction
+  # ===========================================================================
+
+  - caseId: engeto-oop-007-inheritance
+    context:
+      level: intermediate
+      timeBudgetMinutes: 60
+      preferences: [practical, hands-on]
+      constraints: ["knows classes, instances, methods, attributes"]
+      parentLesson: "Inheritance and Abstraction"
+      lessonNumber: 3
+      partNumber: 1
+
+    expectedScenario:
+      mustHave:
+        - "Learner role: OOP developer ready for advanced concepts"
+        - "Context: needs to reuse and extend code"
+        - "Concrete goal: implement inheritance and extend classes"
+      mustAvoid:
+        - "OOP basics (already covered)"
+        - "Multiple inheritance details"
+        - "Metaclasses"
+      golden:
+        summary: |
+          You can create classes and now you'll learn to extend them using inheritance.
+          The goal is to understand when and how to inherit, and avoid common pitfalls.
+
+    expectedConcepts:
+      mustHave:
+        - "Python inheritance basics"
+        - "super() and calling parent methods"
+        - "Method overriding"
+        - "When to inherit and when not (composition vs inheritance)"
+      mustAvoid:
+        - "Multiple inheritance (briefly)"
+        - "MRO details"
+        - "Abstract classes (next course)"
+      golden:
+        concepts:
+          - name: "Inheritance basics"
+            description: "How one class extends another - syntax and concept."
+          - name: "super() and parent"
+            description: "Calling parent class methods correctly."
+          - name: "Method override"
+            description: "Overriding behavior in child classes."
+          - name: "Composition vs inheritance"
+            description: "When to inherit and when to compose objects instead."
+
+  - caseId: engeto-oop-008-polymorphism
+    context:
+      level: intermediate
+      timeBudgetMinutes: 60
+      preferences: [practical]
+      constraints: ["knows inheritance"]
+      parentLesson: "Inheritance and Abstraction"
+      lessonNumber: 3
+      partNumber: 2
+
+    expectedScenario:
+      mustHave:
+        - "Learner role: developer working with class hierarchies"
+        - "Context: needs flexible and extensible code"
+        - "Concrete goal: understand polymorphism and encapsulation in practice"
+      mustAvoid:
+        - "Inheritance basics (covered)"
+        - "Abstract classes (next course)"
+        - "Type hints and protocols"
+      golden:
+        summary: |
+          You can inherit classes and now you'll learn to leverage polymorphism -
+          how to write code that works with different object types uniformly.
+
+    expectedConcepts:
+      mustHave:
+        - "Polymorphism - same interface, different implementations"
+        - "Duck typing in Python"
+        - "Encapsulation - hiding implementation"
+        - "Practical polymorphism examples"
+      mustAvoid:
+        - "Abstract base classes (next course)"
+        - "Protocols and structural subtyping"
+        - "Multiple dispatch"
+      golden:
+        concepts:
+          - name: "What is polymorphism"
+            description: "One interface, many implementations - core idea."
+          - name: "Duck typing"
+            description: "Pythonic approach - what matters is what object can do, not what it is."
+          - name: "Encapsulation in practice"
+            description: "How and why to hide implementation details."
+          - name: "Polymorphism in real code"
+            description: "Examples from frameworks and libraries."
+
+  - caseId: engeto-oop-009-abstraction
+    context:
+      level: intermediate
+      timeBudgetMinutes: 60
+      preferences: [practical, hands-on]
+      constraints: ["knows inheritance and polymorphism"]
+      parentLesson: "Inheritance and Abstraction"
+      lessonNumber: 3
+      partNumber: 3
+
+    expectedScenario:
+      mustHave:
+        - "Learner role: OOP developer defining contracts"
+        - "Context: needs to enforce implementation in child classes"
+        - "Concrete goal: use ABC and abstract methods"
+      mustAvoid:
+        - "Inheritance basics (covered)"
+        - "Metaclasses"
+        - "Protocols (typing module)"
+      golden:
+        summary: |
+          You understand polymorphism and now you'll learn to define abstract classes -
+          how to enforce that child classes must implement certain methods.
+
+    expectedConcepts:
+      mustHave:
+        - "ABC module and abstract classes"
+        - "@abstractmethod decorator"
+        - "When to use abstract class"
+        - "Interface pattern in Python"
+      mustAvoid:
+        - "Protocols (typing.Protocol)"
+        - "Metaclasses and __new__"
+        - "Multiple inheritance anti-patterns"
+      golden:
+        concepts:
+          - name: "Abstract classes"
+            description: "Classes that cannot be instantiated - they define contracts."
+          - name: "ABC module"
+            description: "Python standard library for abstract base classes."
+          - name: "@abstractmethod"
+            description: "How to enforce method implementation in child classes."
+          - name: "Interface pattern"
+            description: "When and how to define pure interfaces in Python."
+
+  # ===========================================================================
+  # LESSON 4: Working with Environment (Tooling)
+  # Original content: virtualenv, env variables, uv/pip, project/package functionality
+  # ===========================================================================
+
+  - caseId: engeto-tooling-001-virtualenv
+    context:
+      level: beginner
+      timeBudgetMinutes: 60
+      preferences: [practical, hands-on]
+      constraints: []
+      parentLesson: "Working with Environment"
+      lessonNumber: 4
+      partNumber: 1
+
+    expectedScenario:
+      mustHave:
+        - "Learner role: Python developer without virtual environment experience"
+        - "Context: needs to isolate projects and their dependencies"
+        - "Concrete goal: create and use virtual environments"
+      mustAvoid:
+        - "Poetry, uv (later courses)"
+        - "Docker and containerization"
+        - "Deployment"
+      golden:
+        summary: |
+          You can write Python code, but you install packages globally.
+          You'll learn to create isolated environments for each project.
+
+    expectedConcepts:
+      mustHave:
+        - "Why isolate environments"
+        - "venv vs virtualenv"
+        - "Creating and activating environments"
+        - "Basic workflow with virtual environments"
+      mustAvoid:
+        - "Conda (out of scope)"
+        - "Poetry, uv (later courses)"
+        - "CI/CD integration"
+      golden:
+        concepts:
+          - name: "Why virtual environments"
+            description: "Problems with global installation and how virtual environments solve them."
+          - name: "venv - standard library solution"
+            description: "How to create environment using python -m venv."
+          - name: "Activation and deactivation"
+            description: "Switching between environments on different OS."
+          - name: "Best practices"
+            description: "Naming conventions, location, .gitignore."
+
+  - caseId: engeto-tooling-002-env-variables
+    context:
+      level: beginner
+      timeBudgetMinutes: 60
+      preferences: [practical, hands-on]
+      constraints: ["knows virtual environments"]
+      parentLesson: "Working with Environment"
+      lessonNumber: 4
+      partNumber: 2
+
+    expectedScenario:
+      mustHave:
+        - "Learner role: developer needing to configure applications"
+        - "Context: doesn't want to hardcode secrets and configuration"
+        - "Concrete goal: properly use environment variables"
+      mustAvoid:
+        - "Secrets management systems (Vault)"
+        - "Cloud-specific configuration"
+        - "12-factor app details"
+      golden:
+        summary: |
+          You have virtual environments and now you'll learn to configure applications
+          using environment variables - securely and flexibly.
+
+    expectedConcepts:
+      mustHave:
+        - "What are environment variables"
+        - "os.environ and os.getenv"
+        - ".env files and python-dotenv"
+        - "Security - what never goes to git"
+      mustAvoid:
+        - "Cloud secrets management"
+        - "Encryption"
+        - "Config management systems"
+      golden:
+        concepts:
+          - name: "Environment variables basics"
+            description: "What they are and why to use them for configuration."
+          - name: "Reading env variables in Python"
+            description: "os.environ, os.getenv, and best practices."
+          - name: ".env files"
+            description: "Local configuration with python-dotenv."
+          - name: "Security and secrets"
+            description: "What never to commit and how to protect sensitive data."
+
+  - caseId: engeto-tooling-003-pip-uv
+    context:
+      level: beginner
+      timeBudgetMinutes: 60
+      preferences: [practical, hands-on]
+      constraints: ["knows virtualenv and env variables"]
+      parentLesson: "Working with Environment"
+      lessonNumber: 4
+      partNumber: 3
+
+    expectedScenario:
+      mustHave:
+        - "Learner role: developer installing dependencies"
+        - "Context: needs to efficiently manage packages"
+        - "Concrete goal: master pip and learn uv as modern alternative"
+      mustAvoid:
+        - "Poetry (next lesson)"
+        - "Publishing packages"
+        - "Private PyPI"
+      golden:
+        summary: |
+          You have virtual environments and now you'll learn to efficiently install
+          and manage packages using pip and modern uv.
+
+    expectedConcepts:
+      mustHave:
+        - "pip basics - install, freeze, requirements.txt"
+        - "uv - fast modern alternative"
+        - "requirements.txt best practices"
+        - "Dependency versioning"
+      mustAvoid:
+        - "Poetry (next course)"
+        - "Private package indexes"
+        - "Publishing packages"
+      golden:
+        concepts:
+          - name: "pip basics"
+            description: "Install, upgrade, uninstall - everyday commands."
+          - name: "requirements.txt"
+            description: "How to track project dependencies."
+          - name: "uv - modern alternative"
+            description: "Why uv is faster and how to use it."
+          - name: "Dependency versioning"
+            description: "Version pinning, ranges, and reproducibility."
+
+  # ===========================================================================
+  # LESSON 5: Dependency Management (Tooling)
+  # Original content: pyproject.toml, library installation, uv/poetry
+  # ===========================================================================
+
+  - caseId: engeto-tooling-004-pyproject
+    context:
+      level: beginner-intermediate
+      timeBudgetMinutes: 60
+      preferences: [practical]
+      constraints: ["knows pip and requirements.txt"]
+      parentLesson: "Dependency Management"
+      lessonNumber: 5
+      partNumber: 1
+
+    expectedScenario:
+      mustHave:
+        - "Learner role: developer transitioning to modern Python tooling"
+        - "Context: requirements.txt is no longer enough for complex projects"
+        - "Concrete goal: understand and use pyproject.toml"
+      mustAvoid:
+        - "Publishing to PyPI"
+        - "Build backends details"
+        - "Legacy setup.py"
+      golden:
+        summary: |
+          You know requirements.txt and now you'll learn the modern standard -
+          pyproject.toml as central Python project configuration.
+
+    expectedConcepts:
+      mustHave:
+        - "What is pyproject.toml and why it was created"
+        - "Basic structure - [project], [tool]"
+        - "Defining dependencies in pyproject.toml"
+        - "Optional dependencies and extras"
+      mustAvoid:
+        - "Build backends (setuptools, hatch, flit)"
+        - "Publishing workflow"
+        - "Entry points details"
+      golden:
+        concepts:
+          - name: "pyproject.toml - modern standard"
+            description: "Why it was created and what it replaces (setup.py, setup.cfg)."
+          - name: "Basic structure"
+            description: "[project], [tool] sections, and their purpose."
+          - name: "Dependencies in pyproject.toml"
+            description: "How to define dependencies and dev dependencies."
+          - name: "Optional dependencies"
+            description: "Extras for different use cases (test, dev, docs)."
+
+  - caseId: engeto-tooling-005-poetry
+    context:
+      level: beginner-intermediate
+      timeBudgetMinutes: 60
+      preferences: [practical, hands-on]
+      constraints: ["knows pyproject.toml"]
+      parentLesson: "Dependency Management"
+      lessonNumber: 5
+      partNumber: 2
+
+    expectedScenario:
+      mustHave:
+        - "Learner role: developer looking for better dependency management"
+        - "Context: pip and requirements.txt are too manual"
+        - "Concrete goal: use Poetry for dependency management"
+      mustAvoid:
+        - "Poetry plugins"
+        - "Private repositories"
+        - "Poetry vs Pipenv comparison"
+      golden:
+        summary: |
+          You know pyproject.toml and now you'll learn Poetry -
+          a tool that automates dependency and environment management.
+
+    expectedConcepts:
+      mustHave:
+        - "Poetry installation and basic usage"
+        - "poetry.lock and reproducibility"
+        - "Adding and removing dependencies"
+        - "Dependency groups (dev, test)"
+      mustAvoid:
+        - "Poetry plugins"
+        - "Publishing with Poetry"
+        - "Monorepo setups"
+      golden:
+        concepts:
+          - name: "Poetry basics"
+            description: "Installation, poetry new, poetry init."
+          - name: "poetry.lock"
+            description: "Why lockfile and how it ensures reproducibility."
+          - name: "Dependency management"
+            description: "poetry add, remove, update - practical workflow."
+          - name: "Dependency groups"
+            description: "Organizing dependencies for different purposes."
+
+  - caseId: engeto-tooling-006-uv-advanced
+    context:
+      level: beginner-intermediate
+      timeBudgetMinutes: 60
+      preferences: [practical, hands-on]
+      constraints: ["knows Poetry and pyproject.toml"]
+      parentLesson: "Dependency Management"
+      lessonNumber: 5
+      partNumber: 3
+
+    expectedScenario:
+      mustHave:
+        - "Learner role: developer optimizing workflow"
+        - "Context: Poetry is slow, looking for faster alternative"
+        - "Concrete goal: use uv as modern replacement"
+      mustAvoid:
+        - "uv internals (Rust)"
+        - "Comparison with Pipenv"
+        - "Enterprise setups"
+      golden:
+        summary: |
+          You know Poetry and now you'll learn uv - extremely fast alternative
+          from Ruff creators, compatible with pyproject.toml.
+
+    expectedConcepts:
+      mustHave:
+        - "uv as Poetry/pip replacement"
+        - "uv sync, add, remove"
+        - "Compatibility with pyproject.toml"
+        - "Speed and practical advantages"
+      mustAvoid:
+        - "uv internals"
+        - "Custom index configuration"
+        - "CI/CD specifics"
+      golden:
+        concepts:
+          - name: "uv - why it's so fast"
+            description: "Rust implementation and parallel resolution."
+          - name: "Migration from pip/Poetry"
+            description: "How to switch to uv with existing project."
+          - name: "Everyday workflow"
+            description: "uv sync, add, remove - practical usage."
+          - name: "When uv vs Poetry"
+            description: "Advantages and disadvantages, recommendations for different situations."
+
+  # ===========================================================================
+  # LESSON 6: Linting and Formatting (Tooling)
+  # Original content: Ruff, Black, pyright, configuration
+  # ===========================================================================
+
+  - caseId: engeto-tooling-007-formatting
+    context:
+      level: beginner-intermediate
+      timeBudgetMinutes: 60
+      preferences: [practical, hands-on]
+      constraints: []
+      parentLesson: "Linting and Formatting"
+      lessonNumber: 6
+      partNumber: 1
+
+    expectedScenario:
+      mustHave:
+        - "Learner role: developer in team needing consistent code"
+        - "Context: everyone writes differently, code reviews argue about style"
+        - "Concrete goal: automate formatting with Black and Ruff"
+      mustAvoid:
+        - "Autopep8, YAPF (legacy)"
+        - "Editor-specific setup"
+        - "Pre-commit hooks (later)"
+      golden:
+        summary: |
+          Your team argues about code formatting. You'll learn to use
+          Black and Ruff formatter for automatic consistency.
+
+    expectedConcepts:
+      mustHave:
+        - "Why automatic formatting"
+        - "Black - opinionated formatter"
+        - "Ruff formatter as alternative"
+        - "Configuration in pyproject.toml"
+      mustAvoid:
+        - "All Black options (most don't change)"
+        - "Comparison with YAPF"
+        - "Editor plugins (generally)"
+      golden:
+        concepts:
+          - name: "Why automatic formatting"
+            description: "End of style debates, consistency, faster reviews."
+          - name: "Black formatter"
+            description: "Opinionated formatter - why 'no configuration' is a feature."
+          - name: "Ruff formatter"
+            description: "Black-compatible alternative from Ruff team."
+          - name: "Configuration"
+            description: "Line length and other settings in pyproject.toml."
+
+  - caseId: engeto-tooling-008-linting
+    context:
+      level: beginner-intermediate
+      timeBudgetMinutes: 60
+      preferences: [practical, hands-on]
+      constraints: ["knows code formatting"]
+      parentLesson: "Linting and Formatting"
+      lessonNumber: 6
+      partNumber: 2
+
+    expectedScenario:
+      mustHave:
+        - "Learner role: developer looking for bugs before runtime"
+        - "Context: needs automatic code quality checking"
+        - "Concrete goal: set up and use Ruff linter"
+      mustAvoid:
+        - "Pylint, Flake8 (legacy for most use cases)"
+        - "Security linting (Bandit)"
+        - "Custom rules"
+      golden:
+        summary: |
+          You format code automatically and now you want to find bugs and code smells.
+          You'll learn Ruff linter - fast all-in-one tool.
+
+    expectedConcepts:
+      mustHave:
+        - "What linter does and why to use it"
+        - "Ruff - why it replaces Flake8, isort, and more"
+        - "Rules and their configuration"
+        - "Integration into workflow"
+      mustAvoid:
+        - "All Ruff rules"
+        - "Custom rules"
+        - "Flake8 plugins (Ruff replaces them)"
+      golden:
+        concepts:
+          - name: "What linter does"
+            description: "Static analysis - finds problems without running code."
+          - name: "Ruff linter"
+            description: "Why Ruff replaced Flake8, isort, pyupgrade and more."
+          - name: "Rule configuration"
+            description: "Select, ignore, extend - how to customize Ruff."
+          - name: "Automatic fixes"
+            description: "ruff check --fix - automatic problem fixing."
+
+  - caseId: engeto-tooling-009-typing
+    context:
+      level: beginner-intermediate
+      timeBudgetMinutes: 60
+      preferences: [practical, hands-on]
+      constraints: ["knows formatting and linting"]
+      parentLesson: "Linting and Formatting"
+      lessonNumber: 6
+      partNumber: 3
+
+    expectedScenario:
+      mustHave:
+        - "Learner role: developer adding type safety to Python"
+        - "Context: wants benefits of statically typed languages in Python"
+        - "Concrete goal: use type hints and pyright"
+      mustAvoid:
+        - "mypy details (pyright is more modern)"
+        - "Runtime type checking"
+        - "Generic types (advanced)"
+      golden:
+        summary: |
+          You have linting and now you want type safety. You'll learn type hints
+          and pyright type checker for catching bugs during development.
+
+    expectedConcepts:
+      mustHave:
+        - "Python type hints basics"
+        - "pyright - fast type checker"
+        - "Configuration pyrightconfig.json / pyproject.toml"
+        - "Strict vs basic mode"
+      mustAvoid:
+        - "Generic types (TypeVar)"
+        - "Protocols details"
+        - "Runtime type checking (Pydantic is different course)"
+      golden:
+        concepts:
+          - name: "Type hints basics"
+            description: "How to annotate functions, variables, classes."
+          - name: "pyright"
+            description: "Type checker from Microsoft - fast and accurate."
+          - name: "Configuration"
+            description: "How to set up pyright for your project."
+          - name: "Gradual type adoption"
+            description: "How to start with types in existing project."
+
+  # ===========================================================================
+  # LESSON 7: Build & Distribution (Tooling)
+  # Original content: setup.py, project structure, packaging
+  # ===========================================================================
+
+  - caseId: engeto-tooling-010-structure
+    context:
+      level: beginner-intermediate
+      timeBudgetMinutes: 60
+      preferences: [practical]
+      constraints: []
+      parentLesson: "Build & Distribution"
+      lessonNumber: 7
+      partNumber: 1
+
+    expectedScenario:
+      mustHave:
+        - "Learner role: developer organizing larger project"
+        - "Context: has spaghetti code, needs structure"
+        - "Concrete goal: properly structure Python project"
+      mustAvoid:
+        - "Monorepo patterns"
+        - "Django/Flask specific structures"
+        - "Enterprise patterns"
+      golden:
+        summary: |
+          Your project is growing and you need better organization.
+          You'll learn standard Python project structure.
+
+    expectedConcepts:
+      mustHave:
+        - "Flat vs src layout"
+        - "Where things belong - tests, docs, src"
+        - "__init__.py and packages"
+        - "Import system basics"
+      mustAvoid:
+        - "Namespace packages"
+        - "Monorepo"
+        - "Framework-specific layouts"
+      golden:
+        concepts:
+          - name: "Flat vs src layout"
+            description: "Two main structures and when to use each."
+          - name: "Project organization"
+            description: "src/, tests/, docs/ - standard directories."
+          - name: "__init__.py"
+            description: "What it does and when you need it."
+          - name: "Import system"
+            description: "How Python finds modules and packages."
+
+  - caseId: engeto-tooling-011-build
+    context:
+      level: intermediate
+      timeBudgetMinutes: 60
+      preferences: [practical]
+      constraints: ["knows project structure"]
+      parentLesson: "Build & Distribution"
+      lessonNumber: 7
+      partNumber: 2
+
+    expectedScenario:
+      mustHave:
+        - "Learner role: developer preparing package for distribution"
+        - "Context: wants to share code as installable package"
+        - "Concrete goal: understand build system and create package"
+      mustAvoid:
+        - "Legacy setup.py only projects"
+        - "C extensions"
+        - "Conda packages"
+      golden:
+        summary: |
+          You have a structured project and want to package it as installable.
+          You'll learn modern build system with pyproject.toml.
+
+    expectedConcepts:
+      mustHave:
+        - "What is wheel and sdist"
+        - "Build backends (setuptools, hatch, flit)"
+        - "[build-system] in pyproject.toml"
+        - "python -m build"
+      mustAvoid:
+        - "setup.py details (legacy)"
+        - "C extensions build"
+        - "Manylinux wheels"
+      golden:
+        concepts:
+          - name: "Wheel vs sdist"
+            description: "Two distribution format types and when to use each."
+          - name: "Build backends"
+            description: "setuptools, hatch, flit - overview of options."
+          - name: "[build-system]"
+            description: "How to specify build backend in pyproject.toml."
+          - name: "Package creation"
+            description: "python -m build and what it creates."
+
+  # ===========================================================================
+  # LESSON 8: Django Project Structure (Django)
+  # Original content: Project vs app, MTV architecture, settings
+  # ===========================================================================
+
+  - caseId: engeto-django-001-project
+    context:
+      level: beginner
+      timeBudgetMinutes: 60
+      preferences: [practical, hands-on]
+      constraints: ["knows Python OOP"]
+      parentLesson: "Django Project Structure"
+      lessonNumber: 8
+      partNumber: 1
+
+    expectedScenario:
+      mustHave:
+        - "Learner role: Python developer starting with Django"
+        - "Context: wants to build web application"
+        - "Concrete goal: understand basic Django project structure"
+      mustAvoid:
+        - "Django REST Framework"
+        - "Deployment"
+        - "Database specifics"
+      golden:
+        summary: |
+          You know Python and want to build web applications. You'll learn
+          basic Django project structure - what goes where and why.
+
+    expectedConcepts:
+      mustHave:
+        - "What is Django and why use it"
+        - "django-admin startproject"
+        - "New project structure"
+        - "manage.py and its commands"
+      mustAvoid:
+        - "Apps (next course)"
+        - "Models, views (generally)"
+        - "Deployment"
+      golden:
+        concepts:
+          - name: "What is Django"
+            description: "Batteries-included framework - what it brings and who it's for."
+          - name: "Project creation"
+            description: "django-admin startproject and what it creates."
+          - name: "Project structure"
+            description: "wsgi.py, asgi.py, urls.py, settings.py - what goes where."
+          - name: "manage.py"
+            description: "Central entry point - runserver, migrate, shell."
+
+  - caseId: engeto-django-002-apps
+    context:
+      level: beginner
+      timeBudgetMinutes: 60
+      preferences: [practical, hands-on]
+      constraints: ["knows Django project basics"]
+      parentLesson: "Django Project Structure"
+      lessonNumber: 8
+      partNumber: 2
+
+    expectedScenario:
+      mustHave:
+        - "Learner role: Django developer organizing functionality"
+        - "Context: needs to structure larger application"
+        - "Concrete goal: understand apps concept and their usage"
+      mustAvoid:
+        - "Reusable apps publishing"
+        - "Third-party apps integration"
+        - "App registries internals"
+      golden:
+        summary: |
+          You have a Django project and now you'll learn to organize it using apps -
+          modular components for different functionality.
+
+    expectedConcepts:
+      mustHave:
+        - "Project vs app concept"
+        - "startapp and app structure"
+        - "INSTALLED_APPS registration"
+        - "When to create new app"
+      mustAvoid:
+        - "App configuration details"
+        - "Reusable apps"
+        - "Third-party integration"
+      golden:
+        concepts:
+          - name: "Project vs app"
+            description: "Project is container, app is functionality."
+          - name: "App creation"
+            description: "python manage.py startapp and what it creates."
+          - name: "INSTALLED_APPS"
+            description: "How to register app in project."
+          - name: "App organization"
+            description: "When to create new app, single responsibility."
+
+  - caseId: engeto-django-003-mtv-settings
+    context:
+      level: beginner-intermediate
+      timeBudgetMinutes: 60
+      preferences: [practical]
+      constraints: ["knows project and apps"]
+      parentLesson: "Django Project Structure"
+      lessonNumber: 8
+      partNumber: 3
+
+    expectedScenario:
+      mustHave:
+        - "Learner role: Django developer understanding architecture"
+        - "Context: needs to understand how Django works as a whole"
+        - "Concrete goal: understand MTV pattern and configuration"
+      mustAvoid:
+        - "Class-based views details"
+        - "Advanced settings patterns"
+        - "Signals and middleware"
+      golden:
+        summary: |
+          You know project structure and apps. Now you'll understand how Django works -
+          MTV architecture and how to configure settings.
+
+    expectedConcepts:
+      mustHave:
+        - "MTV (Model-Template-View) pattern"
+        - "How request flows through Django"
+        - "settings.py key configuration"
+        - "Environment-specific settings"
+      mustAvoid:
+        - "Custom user model (specific topic)"
+        - "Middleware deep dive"
+        - "Deployment settings"
+      golden:
+        concepts:
+          - name: "MTV architecture"
+            description: "Model-Template-View - how it differs from MVC."
+          - name: "Request/response cycle"
+            description: "How request flows through Django - URL → View → Template."
+          - name: "settings.py"
+            description: "Key settings - DEBUG, DATABASES, STATIC."
+          - name: "Multiple settings files"
+            description: "How to separate dev, staging, production configurations."
+
+  # ===========================================================================
+  # LESSON 9: URL, Views, Templates (Django)
+  # Original content: Routing, CBV/FBV, context, templating
+  # ===========================================================================
+
+  - caseId: engeto-django-004-urls
+    context:
+      level: beginner-intermediate
+      timeBudgetMinutes: 60
+      preferences: [practical, hands-on]
+      constraints: ["knows Django project structure"]
+      parentLesson: "URL, Views, Templates"
+      lessonNumber: 9
+      partNumber: 1
+
+    expectedScenario:
+      mustHave:
+        - "Learner role: Django developer setting up routing"
+        - "Context: needs to map URLs to views"
+        - "Concrete goal: understand URL routing in Django"
+      mustAvoid:
+        - "REST API routing"
+        - "Async views"
+        - "Custom URL converters"
+      golden:
+        summary: |
+          You have a Django project with apps and now you'll learn how routing works -
+          how URL addresses map to view functions.
+
+    expectedConcepts:
+      mustHave:
+        - "URLconf and path()"
+        - "URL parameters and converters"
+        - "include() for modularity"
+        - "URL naming and reverse()"
+      mustAvoid:
+        - "re_path() (legacy)"
+        - "Custom converters"
+        - "URL namespacing advanced"
+      golden:
+        concepts:
+          - name: "URLconf basics"
+            description: "urls.py, urlpatterns, path() syntax."
+          - name: "URL parameters"
+            description: "Dynamic URLs with <int:pk>, <slug:slug> and more."
+          - name: "Modularity with include()"
+            description: "How to organize URLs by apps."
+          - name: "URL naming"
+            description: "Why name URLs and how to use reverse()."
+
+  - caseId: engeto-django-005-views
+    context:
+      level: beginner-intermediate
+      timeBudgetMinutes: 60
+      preferences: [practical, hands-on]
+      constraints: ["knows URL routing"]
+      parentLesson: "URL, Views, Templates"
+      lessonNumber: 9
+      partNumber: 2
+
+    expectedScenario:
+      mustHave:
+        - "Learner role: Django developer implementing logic"
+        - "Context: needs to process HTTP requests"
+        - "Concrete goal: write function-based and class-based views"
+      mustAvoid:
+        - "Generic views details"
+        - "Mixins"
+        - "Async views"
+      golden:
+        summary: |
+          You understand URL routing and now you'll learn views -
+          where your application logic lives, FBV vs CBV.
+
+    expectedConcepts:
+      mustHave:
+        - "Function-based views (FBV)"
+        - "Class-based views (CBV) basics"
+        - "Request and response objects"
+        - "When FBV vs CBV"
+      mustAvoid:
+        - "Generic CBV details"
+        - "Mixins"
+        - "ViewSets (DRF)"
+      golden:
+        concepts:
+          - name: "Function-based views"
+            description: "Simple view functions - request in, response out."
+          - name: "Class-based views"
+            description: "View as class - get(), post() methods."
+          - name: "Request objekt"
+            description: "What request contains - GET, POST, user, session."
+          - name: "FBV vs CBV"
+            description: "When to use function and when class - practical rules."
+
+  - caseId: engeto-django-006-templates
+    context:
+      level: beginner-intermediate
+      timeBudgetMinutes: 60
+      preferences: [practical, hands-on]
+      constraints: ["knows views"]
+      parentLesson: "URL, Views, Templates"
+      lessonNumber: 9
+      partNumber: 3
+
+    expectedScenario:
+      mustHave:
+        - "Learner role: Django developer creating UI"
+        - "Context: needs to render HTML with data"
+        - "Concrete goal: use Django template system"
+      mustAvoid:
+        - "Jinja2"
+        - "Custom template tags"
+        - "Template caching"
+      golden:
+        summary: |
+          You have views and now you need to generate HTML.
+          You'll learn Django template system - how to combine HTML with data.
+
+    expectedConcepts:
+      mustHave:
+        - "Template syntax - {{ }} and {% %}"
+        - "Context and render()"
+        - "Template inheritance - base.html"
+        - "Built-in template tags and filters"
+      mustAvoid:
+        - "Custom template tags"
+        - "Jinja2 differences"
+        - "Template loaders"
+      golden:
+        concepts:
+          - name: "Template syntax"
+            description: "Variables {{ }}, tags {% %}, filters |."
+          - name: "Context"
+            description: "How to pass data from view to template."
+          - name: "Template inheritance"
+            description: "base.html, {% block %}, {% extends %} - DRY principle."
+          - name: "Built-in tags a filtry"
+            description: "for, if, url, date, default - most common usage."
+
+  # ===========================================================================
+  # LESSON 10: Models and ORM (Django)
+  # Original content: Migrations, models, QuerySet operations
+  # ===========================================================================
+
+  - caseId: engeto-django-007-modely
+    context:
+      level: beginner-intermediate
+      timeBudgetMinutes: 60
+      preferences: [practical, hands-on]
+      constraints: ["knows Django basics"]
+      parentLesson: "Models and ORM"
+      lessonNumber: 10
+      partNumber: 1
+
+    expectedScenario:
+      mustHave:
+        - "Learner role: Django developer defining data model"
+        - "Context: needs to store data in database"
+        - "Concrete goal: define models and field types"
+      mustAvoid:
+        - "Custom fields"
+        - "Multi-table inheritance"
+        - "Proxy models"
+      golden:
+        summary: |
+          You know routing and views, now you need data. You'll learn
+          to define Django models - Python classes as database tables.
+
+    expectedConcepts:
+      mustHave:
+        - "Model as Python class"
+        - "Field types - CharField, IntegerField, ForeignKey..."
+        - "Field options - null, blank, default, choices"
+        - "Meta class - ordering, verbose_name"
+      mustAvoid:
+        - "Custom fields"
+        - "Validators (basic)"
+        - "Signals"
+      golden:
+        concepts:
+          - name: "Model definition"
+            description: "Class inheriting from models.Model - basic structure."
+          - name: "Field types"
+            description: "CharField, TextField, IntegerField, DateField and more."
+          - name: "Field options"
+            description: "null, blank, default, choices - how to configure fields."
+          - name: "Meta class"
+            description: "ordering, verbose_name, db_table - model metadata."
+
+  - caseId: engeto-django-008-migrace
+    context:
+      level: beginner-intermediate
+      timeBudgetMinutes: 60
+      preferences: [practical, hands-on]
+      constraints: ["knows models"]
+      parentLesson: "Models and ORM"
+      lessonNumber: 10
+      partNumber: 2
+
+    expectedScenario:
+      mustHave:
+        - "Learner role: Django developer syncing DB"
+        - "Context: changed models and needs to update database"
+        - "Concrete goal: master migration system"
+      mustAvoid:
+        - "Squashing migrations"
+        - "Data migrations details"
+        - "Multiple databases"
+      golden:
+        summary: |
+          You have defined models and now you need to get them into the database.
+          You'll learn migration system - how Django versions schema.
+
+    expectedConcepts:
+      mustHave:
+        - "makemigrations and migrate"
+        - "What are migration files"
+        - "Rollback and showmigrations"
+        - "Resolving migration conflicts"
+      mustAvoid:
+        - "Squashing"
+        - "RunPython for data migrations"
+        - "Custom migration operations"
+      golden:
+        concepts:
+          - name: "makemigrations"
+            description: "Detecting model changes and creating migration."
+          - name: "migrate"
+            description: "Applying migrations to database."
+          - name: "Migration files"
+            description: "What they contain and why to commit them."
+          - name: "Troubleshooting"
+            description: "Conflicts, rollback, fake migrations."
+
+  - caseId: engeto-django-009-queryset
+    context:
+      level: beginner-intermediate
+      timeBudgetMinutes: 60
+      preferences: [practical, hands-on]
+      constraints: ["knows models and migrations"]
+      parentLesson: "Models and ORM"
+      lessonNumber: 10
+      partNumber: 3
+
+    expectedScenario:
+      mustHave:
+        - "Learner role: Django developer querying database"
+        - "Context: needs to read and filter data"
+        - "Concrete goal: master QuerySet API"
+      mustAvoid:
+        - "Raw SQL"
+        - "Custom managers"
+        - "Query optimization (select_related is OK)"
+      golden:
+        summary: |
+          You have models in database and now you'll learn to work with them.
+          QuerySet API - how to elegantly query data in Python.
+
+    expectedConcepts:
+      mustHave:
+        - "Manager and QuerySet"
+        - "Filtering - filter(), exclude(), get()"
+        - "Lookups - __contains, __gt, __in"
+        - "Chaining and lazy evaluation"
+      mustAvoid:
+        - "Custom QuerySets"
+        - "Raw SQL"
+        - "Database functions"
+      golden:
+        concepts:
+          - name: "QuerySet basics"
+            description: "Model.objects - manager and its methods."
+          - name: "Filtering"
+            description: "filter(), exclude(), get() - how to find data."
+          - name: "Field lookups"
+            description: "__exact, __contains, __gt, __in - query conditions."
+          - name: "QuerySet chaining"
+            description: "Lazy evaluation and method chaining."
+
+  # ===========================================================================
+  # LESSON 11: Forms and Validation (Django)
+  # Original content: Forms, ModelForms, validation, data handling
+  # ===========================================================================
+
+  - caseId: engeto-django-010-forms
+    context:
+      level: beginner-intermediate
+      timeBudgetMinutes: 60
+      preferences: [practical, hands-on]
+      constraints: ["knows models and views"]
+      parentLesson: "Forms and Validation"
+      lessonNumber: 11
+      partNumber: 1
+
+    expectedScenario:
+      mustHave:
+        - "Learner role: Django developer processing user input"
+        - "Context: needs forms for data entry"
+        - "Concrete goal: create and process Django forms"
+      mustAvoid:
+        - "Formsets"
+        - "Inline formsets"
+        - "Custom widgets details"
+      golden:
+        summary: |
+          You know views and models, now you need user input.
+          You'll learn Django forms - secure data processing.
+
+    expectedConcepts:
+      mustHave:
+        - "Form class and field types"
+        - "Rendering form in template"
+        - "Processing POST in view"
+        - "Basic validation"
+      mustAvoid:
+        - "Formsets"
+        - "Multi-value fields"
+        - "Custom widgets"
+      golden:
+        concepts:
+          - name: "Form definition"
+            description: "forms.Form, CharField, EmailField - basic structure."
+          - name: "Rendering"
+            description: "{{ form.as_p }}, manual rendering, CSRF token."
+          - name: "POST processing"
+            description: "is_valid(), cleaned_data - secure workflow."
+          - name: "Field validation"
+            description: "required, max_length, validators - basic rules."
+
+  - caseId: engeto-django-011-modelforms
+    context:
+      level: beginner-intermediate
+      timeBudgetMinutes: 60
+      preferences: [practical, hands-on]
+      constraints: ["knows Django forms"]
+      parentLesson: "Forms and Validation"
+      lessonNumber: 11
+      partNumber: 2
+
+    expectedScenario:
+      mustHave:
+        - "Learner role: Django developer editing model data"
+        - "Context: needs forms connected to models"
+        - "Concrete goal: use ModelForm for CRUD operations"
+      mustAvoid:
+        - "Inline formsets"
+        - "Generic editing views details"
+        - "Custom save() logic (basic)"
+      golden:
+        summary: |
+          You know forms and now you'll learn ModelForm -
+          automatic forms generated from models.
+
+    expectedConcepts:
+      mustHave:
+        - "ModelForm and Meta class"
+        - "fields vs exclude"
+        - "save() method"
+        - "Editing existing objects (instance)"
+      mustAvoid:
+        - "Inline formsets"
+        - "Complex save() overrides"
+        - "Many-to-many handling"
+      golden:
+        concepts:
+          - name: "ModelForm"
+            description: "Form automatically from model - DRY principle."
+          - name: "Meta class"
+            description: "model, fields, exclude - configuration."
+          - name: "save() method"
+            description: "How ModelForm saves data, commit=False."
+          - name: "Object editing"
+            description: "instance parameter for updating existing data."
+
+  - caseId: engeto-django-012-validace
+    context:
+      level: beginner-intermediate
+      timeBudgetMinutes: 60
+      preferences: [practical, hands-on]
+      constraints: ["knows forms and ModelForms"]
+      parentLesson: "Forms and Validation"
+      lessonNumber: 11
+      partNumber: 3
+
+    expectedScenario:
+      mustHave:
+        - "Learner role: Django developer validating data"
+        - "Context: needs more complex validation rules"
+        - "Concrete goal: implement custom validation"
+      mustAvoid:
+        - "REST Framework validation"
+        - "Async validace"
+        - "Database constraints"
+      golden:
+        summary: |
+          You know basic validation and now you'll learn more advanced techniques -
+          custom validators, cross-field validation, error handling.
+
+    expectedConcepts:
+      mustHave:
+        - "clean_<fieldname>() methods"
+        - "clean() for cross-field validation"
+        - "Custom validators"
+        - "Error messages and display"
+      mustAvoid:
+        - "Model validators vs form validators"
+        - "Unique together at DB level"
+        - "Async validace"
+      golden:
+        concepts:
+          - name: "Field-level validation"
+            description: "clean_<fieldname>() for single field validation."
+          - name: "Form-level validation"
+            description: "clean() for cross-field validation."
+          - name: "Custom validators"
+            description: "Reusable validation functions."
+          - name: "Error handling"
+            description: "How to display errors to user, non-field errors."
+
+  # ===========================================================================
+  # LESSON 12: REST API Basics (Django)
+  # Original content: Django REST Framework – serializers, simple endpoints
+  # ===========================================================================
+
+  - caseId: engeto-django-013-drf-intro
+    context:
+      level: beginner-intermediate
+      timeBudgetMinutes: 60
+      preferences: [practical, hands-on]
+      constraints: ["knows Django models and views"]
+      parentLesson: "REST API Basics"
+      lessonNumber: 12
+      partNumber: 1
+
+    expectedScenario:
+      mustHave:
+        - "Learner role: Django developer building API"
+        - "Context: needs JSON API for frontend/mobile"
+        - "Concrete goal: understand DRF and create first endpoint"
+      mustAvoid:
+        - "Authentication (OAuth, JWT)"
+        - "Permissions details"
+        - "Throttling"
+      golden:
+        summary: |
+          You know Django and now you need REST API for frontend or mobile app.
+          You'll learn Django REST Framework - basics.
+
+    expectedConcepts:
+      mustHave:
+        - "What is REST and why DRF"
+        - "Installation and basic configuration"
+        - "APIView vs functions"
+        - "Response and status codes"
+      mustAvoid:
+        - "ViewSets (next course)"
+        - "Authentication backends"
+        - "Permissions"
+      golden:
+        concepts:
+          - name: "REST and DRF"
+            description: "What is REST API and why use DRF."
+          - name: "DRF installation"
+            description: "pip install, INSTALLED_APPS, basic setup."
+          - name: "APIView"
+            description: "Class-based view for API - get(), post()."
+          - name: "Response"
+            description: "DRF Response, status codes, JSON output."
+
+  - caseId: engeto-django-014-serializers
+    context:
+      level: beginner-intermediate
+      timeBudgetMinutes: 60
+      preferences: [practical, hands-on]
+      constraints: ["knows DRF basics"]
+      parentLesson: "REST API Basics"
+      lessonNumber: 12
+      partNumber: 2
+
+    expectedScenario:
+      mustHave:
+        - "Learner role: DRF developer serializing data"
+        - "Context: needs to convert models to JSON and back"
+        - "Concrete goal: master serializers"
+      mustAvoid:
+        - "Nested serializers (complex)"
+        - "Custom field types"
+        - "HyperlinkedSerializers"
+      golden:
+        summary: |
+          You have APIView and now you need to convert data.
+          Serializers - how Django models ↔ JSON.
+
+    expectedConcepts:
+      mustHave:
+        - "Serializer class"
+        - "ModelSerializer"
+        - "Validation in serializers"
+        - "Nested serializers basics"
+      mustAvoid:
+        - "HyperlinkedModelSerializer"
+        - "Custom fields"
+        - "Writable nested serializers"
+      golden:
+        concepts:
+          - name: "Serializer"
+            description: "Field definitions, similar to Form."
+          - name: "ModelSerializer"
+            description: "Automatic serializer from model."
+          - name: "Validation"
+            description: "validate_<field>(), validate() - same pattern as forms."
+          - name: "Nested data"
+            description: "How to serialize related objects."
+
+  - caseId: engeto-django-015-endpoints
+    context:
+      level: beginner-intermediate
+      timeBudgetMinutes: 60
+      preferences: [practical, hands-on]
+      constraints: ["knows serializers"]
+      parentLesson: "REST API Basics"
+      lessonNumber: 12
+      partNumber: 3
+
+    expectedScenario:
+      mustHave:
+        - "Learner role: DRF developer building CRUD API"
+        - "Context: needs complete REST endpoints"
+        - "Concrete goal: create CRUD using ViewSets and Router"
+      mustAvoid:
+        - "Custom actions (detailed)"
+        - "Pagination customization"
+        - "Versioning"
+      golden:
+        summary: |
+          You know serializers and now you'll create complete CRUD API.
+          ViewSets and Routers - productive way to build API.
+
+    expectedConcepts:
+      mustHave:
+        - "ViewSet and ModelViewSet"
+        - "Router for automatic URLs"
+        - "CRUD operations"
+        - "Browsable API"
+      mustAvoid:
+        - "Custom actions details"
+        - "Multiple routers"
+        - "API versioning"
+      golden:
+        concepts:
+          - name: "ViewSet"
+            description: "Combination of views for list, create, retrieve, update, delete."
+          - name: "ModelViewSet"
+            description: "CRUD from model with minimal code."
+          - name: "Router"
+            description: "Automatic URL generation from ViewSets."
+          - name: "Browsable API"
+            description: "DRF web interface for testing."
+
+  # ===========================================================================
+  # LESSON 13: Custom DB Integration (Django + DB)
+  # Original content: Connection setup, mapping to existing tables, unmanaged models
+  # ===========================================================================
+
+  - caseId: engeto-django-016-db-connection
+    context:
+      level: intermediate
+      timeBudgetMinutes: 60
+      preferences: [practical]
+      constraints: ["knows Django models"]
+      parentLesson: "Custom DB Integration"
+      lessonNumber: 13
+      partNumber: 1
+
+    expectedScenario:
+      mustHave:
+        - "Learner role: Django developer connecting external DB"
+        - "Context: has existing database that needs to be used"
+        - "Concrete goal: configure connection to custom DB"
+      mustAvoid:
+        - "Database pooling"
+        - "Cloud-specific configuration"
+        - "Replication"
+      golden:
+        summary: |
+          You have existing database and need to connect it with Django.
+          You'll learn to configure connection and basic settings.
+
+    expectedConcepts:
+      mustHave:
+        - "DATABASES settings"
+        - "Connection parameters"
+        - "Testing connection"
+      mustAvoid:
+        - "Connection pooling"
+        - "Read replicas"
+        - "Cloud databases"
+      golden:
+        concepts:
+          - name: "DATABASES configuration"
+            description: "ENGINE, NAME, HOST, PORT, USER, PASSWORD."
+          - name: "Environment variables"
+            description: "How to securely configure DB credentials."
+          - name: "Testing connection"
+            description: "How to verify Django connected."
+
+  - caseId: engeto-django-017-inspectdb
+    context:
+      level: intermediate
+      timeBudgetMinutes: 60
+      preferences: [practical, hands-on]
+      constraints: ["knows DB connection"]
+      parentLesson: "Custom DB Integration"
+      lessonNumber: 13
+      partNumber: 2
+
+    expectedScenario:
+      mustHave:
+        - "Learner role: developer mapping existing tables"
+        - "Context: database already exists, needs models"
+        - "Concrete goal: generate models from existing DB"
+      mustAvoid:
+        - "Database introspection internals"
+        - "Multi-database routing"
+        - "Schema editor"
+      golden:
+        summary: |
+          Database already exists and you need Django models.
+          inspectdb - how to generate models from existing tables.
+
+    expectedConcepts:
+      mustHave:
+        - "inspectdb command"
+        - "Generated models - what to edit"
+        - "db_table and db_column"
+        - "Primary keys and relations"
+      mustAvoid:
+        - "Introspection internals"
+        - "Custom introspection"
+        - "Cross-database foreign keys"
+      golden:
+        concepts:
+          - name: "inspectdb"
+            description: "python manage.py inspectdb - generating models."
+          - name: "Editing generated models"
+            description: "What to always check and edit."
+          - name: "db_table and db_column"
+            description: "How to map to existing names."
+          - name: "Relations and foreign keys"
+            description: "How inspectdb recognizes relations."
+
+  - caseId: engeto-django-018-unmanaged
+    context:
+      level: intermediate
+      timeBudgetMinutes: 60
+      preferences: [practical]
+      constraints: ["knows inspectdb"]
+      parentLesson: "Custom DB Integration"
+      lessonNumber: 13
+      partNumber: 3
+
+    expectedScenario:
+      mustHave:
+        - "Learner role: developer with read-only DB access"
+        - "Context: must not change existing database schema"
+        - "Concrete goal: use unmanaged models"
+      mustAvoid:
+        - "Proxy models"
+        - "Multi-table inheritance"
+        - "Database functions"
+      golden:
+        summary: |
+          Your database is managed by another system - you can't change schema.
+          Unmanaged models - how to work with DB without migrations.
+
+    expectedConcepts:
+      mustHave:
+        - "managed = False"
+        - "When to use unmanaged models"
+        - "Unmanaged model limitations"
+        - "Best practices for legacy DB"
+      mustAvoid:
+        - "Proxy models"
+        - "Database views as models"
+        - "Raw SQL (basic)"
+      golden:
+        concepts:
+          - name: "managed = False"
+            description: "Meta option - Django won't modify table."
+          - name: "When unmanaged"
+            description: "Legacy DB, shared DB, read-only access."
+          - name: "Limitations"
+            description: "What doesn't work with unmanaged - migrations, constraints."
+          - name: "Best practices"
+            description: "How to structure project with legacy DB."
+
+  # ===========================================================================
+  # LESSON 14: ORM over External DB (Django + DB)
+  # Original content: Querying, integrity, constraints, complex operations
+  # ===========================================================================
+
+  - caseId: engeto-django-019-advanced-queries
+    context:
+      level: intermediate
+      timeBudgetMinutes: 60
+      preferences: [practical, hands-on]
+      constraints: ["knows basic QuerySet operations"]
+      parentLesson: "ORM over External DB"
+      lessonNumber: 14
+      partNumber: 1
+
+    expectedScenario:
+      mustHave:
+        - "Learner role: Django developer with complex queries"
+        - "Context: basic filtering is not enough"
+        - "Concrete goal: master advanced QuerySet operations"
+      mustAvoid:
+        - "Raw SQL (except mention)"
+        - "Custom lookups"
+        - "Database-specific functions"
+      golden:
+        summary: |
+          You know basic QuerySet operations. Now you'll learn
+          advanced queries - aggregation, annotation, Q objects.
+
+    expectedConcepts:
+      mustHave:
+        - "Q objects for complex conditions"
+        - "F objects for field references"
+        - "Aggregation - Sum, Count, Avg"
+        - "Annotation - adding computed values"
+      mustAvoid:
+        - "Custom aggregates"
+        - "Window functions"
+        - "CTEs"
+      golden:
+        concepts:
+          - name: "Q objects"
+            description: "OR conditions, complex logic in queries."
+          - name: "F objects"
+            description: "Reference to field value in query."
+          - name: "Aggregation"
+            description: "aggregate() - Sum, Count, Avg, Min, Max."
+          - name: "Annotation"
+            description: "annotate() - adding computed values to each record."
+
+  - caseId: engeto-django-020-optimization
+    context:
+      level: intermediate
+      timeBudgetMinutes: 60
+      preferences: [practical]
+      constraints: ["knows advanced QuerySet operations"]
+      parentLesson: "ORM over External DB"
+      lessonNumber: 14
+      partNumber: 2
+
+    expectedScenario:
+      mustHave:
+        - "Learner role: developer optimizing DB queries"
+        - "Context: app is slow due to N+1 problems"
+        - "Concrete goal: optimize QuerySet for performance"
+      mustAvoid:
+        - "Database indexing (DBA level)"
+        - "Query planning"
+        - "Caching (different topic)"
+      golden:
+        summary: |
+          Your queries work but are slow. You'll learn
+          select_related, prefetch_related and how to find N+1 problems.
+
+    expectedConcepts:
+      mustHave:
+        - "N+1 problem - what it is"
+        - "select_related for ForeignKey"
+        - "prefetch_related for ManyToMany"
+        - "How to find slow queries"
+      mustAvoid:
+        - "Prefetch objects (advanced)"
+        - "Database indexes"
+        - "Query caching"
+      golden:
+        concepts:
+          - name: "N+1 problem"
+            description: "Why iteration with DB access is slow."
+          - name: "select_related"
+            description: "JOIN for ForeignKey and OneToOne."
+          - name: "prefetch_related"
+            description: "Separate query for ManyToMany and reverse FK."
+          - name: "Debug toolbar"
+            description: "How to find and analyze slow queries."
+
+  - caseId: engeto-django-021-integrity
+    context:
+      level: intermediate
+      timeBudgetMinutes: 60
+      preferences: [practical]
+      constraints: ["knows query optimization"]
+      parentLesson: "ORM over External DB"
+      lessonNumber: 14
+      partNumber: 3
+
+    expectedScenario:
+      mustHave:
+        - "Learner role: developer working with constraints"
+        - "Context: needs to ensure data integrity"
+        - "Concrete goal: work with DB constraints in Django"
+      mustAvoid:
+        - "Database triggers"
+        - "Stored procedures"
+        - "Custom validators (Django level)"
+      golden:
+        summary: |
+          Performance is solved, now you need integrity.
+          Constraints, transactions, and how Django works with DB integrity.
+
+    expectedConcepts:
+      mustHave:
+        - "unique, unique_together"
+        - "CheckConstraint basics"
+        - "Transactions and atomic()"
+        - "on_delete behavior"
+      mustAvoid:
+        - "Savepoints"
+        - "Nested transactions"
+        - "Database locks"
+      golden:
+        concepts:
+          - name: "Unique constraints"
+            description: "unique=True, unique_together, UniqueConstraint."
+          - name: "CheckConstraint"
+            description: "Validation at DB level."
+          - name: "Transactions"
+            description: "atomic() - how to ensure consistency."
+          - name: "on_delete"
+            description: "CASCADE, PROTECT, SET_NULL - delete behavior."
+
+  # ===========================================================================
+  # LESSON 15: Testing Basics (Testing)
+  # Original content: Unit/integration tests, pytest structure, assertions
+  # ===========================================================================
+
+  - caseId: engeto-testing-001-intro
+    context:
+      level: beginner-intermediate
+      timeBudgetMinutes: 60
+      preferences: [practical, hands-on]
+      constraints: []
+      parentLesson: "Testing Basics"
+      lessonNumber: 15
+      partNumber: 1
+
+    expectedScenario:
+      mustHave:
+        - "Learner role: Python developer starting with testing"
+        - "Context: writes code but doesn't test"
+        - "Concrete goal: understand why to test and pytest basics"
+      mustAvoid:
+        - "TDD (Test Driven Development) as methodology"
+        - "Coverage tools"
+        - "CI/CD integration"
+      golden:
+        summary: |
+          You write code but don't test. You'll learn why to test and how
+          to start with pytest - the most popular Python testing framework.
+
+    expectedConcepts:
+      mustHave:
+        - "Why test - motivation"
+        - "Unit vs integration tests"
+        - "pytest basics"
+        - "First test - structure and running"
+      mustAvoid:
+        - "TDD workflow"
+        - "Coverage"
+        - "Mocking (basic)"
+      golden:
+        concepts:
+          - name: "Why test"
+            description: "Confidence, refactoring, documentation, regression."
+          - name: "Unit vs integration"
+            description: "Small isolated tests vs component cooperation tests."
+          - name: "pytest"
+            description: "Installation, conventions, pytest vs unittest."
+          - name: "First test"
+            description: "test_*.py, assert, running pytest."
+
+  - caseId: engeto-testing-002-assertions
+    context:
+      level: beginner-intermediate
+      timeBudgetMinutes: 60
+      preferences: [practical, hands-on]
+      constraints: ["knows pytest basics"]
+      parentLesson: "Testing Basics"
+      lessonNumber: 15
+      partNumber: 2
+
+    expectedScenario:
+      mustHave:
+        - "Learner role: developer writing assertions"
+        - "Context: needs to effectively verify results"
+        - "Concrete goal: master assertions and error messages"
+      mustAvoid:
+        - "Custom matchers"
+        - "Property-based testing"
+        - "Snapshot testing"
+      golden:
+        summary: |
+          You can run pytest and now you'll learn to write effective assertions -
+          how to verify different types of results.
+
+    expectedConcepts:
+      mustHave:
+        - "assert statement in pytest"
+        - "Pytest assertion rewriting"
+        - "Comparing different types (str, list, dict)"
+        - "pytest.raises for exceptions"
+      mustAvoid:
+        - "Custom assertion helpers"
+        - "Hamcrest matchers"
+        - "Assertion plugins"
+      golden:
+        concepts:
+          - name: "assert in pytest"
+            description: "Simple assert instead of self.assertEqual."
+          - name: "Assertion rewriting"
+            description: "How pytest makes error messages readable."
+          - name: "Comparing collections"
+            description: "Lists, dicts, sets - how pytest displays differences."
+          - name: "pytest.raises"
+            description: "Testing that code throws expected exception."
+
+  - caseId: engeto-testing-003-structure
+    context:
+      level: beginner-intermediate
+      timeBudgetMinutes: 60
+      preferences: [practical]
+      constraints: ["knows assertions"]
+      parentLesson: "Testing Basics"
+      lessonNumber: 15
+      partNumber: 3
+
+    expectedScenario:
+      mustHave:
+        - "Learner role: developer organizing tests"
+        - "Context: has multiple tests, needs structure"
+        - "Concrete goal: properly organize test project"
+      mustAvoid:
+        - "Plugin development"
+        - "Distributed testing"
+        - "Test selection strategies"
+      golden:
+        summary: |
+          You have tests and need to organize them. You'll learn
+          test project structure and pytest conventions.
+
+    expectedConcepts:
+      mustHave:
+        - "Directory structure tests/"
+        - "conftest.py"
+        - "Test classes vs functions"
+        - "pytest.ini / pyproject.toml configuration"
+      mustAvoid:
+        - "pytest plugins development"
+        - "Markers (except basic)"
+        - "Hook functions"
+      golden:
+        concepts:
+          - name: "Structure tests/"
+            description: "Where to place tests, naming conventions."
+          - name: "conftest.py"
+            description: "Shared fixtures and configuration."
+          - name: "Test organization"
+            description: "Functions vs classes, grouping, parameters."
+          - name: "pytest configuration"
+            description: "pytest.ini, pyproject.toml [tool.pytest]."
+
+  # ===========================================================================
+  # LESSON 16: Fixtures and Environment (Testing)
+  # Original content: Fixtures, parametrization, mocking, test project structure
+  # ===========================================================================
+
+  - caseId: engeto-testing-004-fixtures
+    context:
+      level: beginner-intermediate
+      timeBudgetMinutes: 60
+      preferences: [practical, hands-on]
+      constraints: ["knows pytest basics"]
+      parentLesson: "Fixtures and Environment"
+      lessonNumber: 16
+      partNumber: 1
+
+    expectedScenario:
+      mustHave:
+        - "Learner role: developer with repeating setup code"
+        - "Context: tests share common setup"
+        - "Concrete goal: use pytest fixtures"
+      mustAvoid:
+        - "Factory fixtures pattern"
+        - "Async fixtures"
+        - "Fixture finalization advanced"
+      golden:
+        summary: |
+          Your tests repeat the same setup code. You'll learn fixtures -
+          pytest way to share setup and teardown.
+
+    expectedConcepts:
+      mustHave:
+        - "@pytest.fixture basics"
+        - "Scope - function, module, session"
+        - "yield for teardown"
+        - "Built-in fixtures (tmp_path, capsys)"
+      mustAvoid:
+        - "Fixture factories"
+        - "Indirect fixtures"
+        - "Async fixtures"
+      golden:
+        concepts:
+          - name: "@pytest.fixture"
+            description: "Fixture definition, injection into tests."
+          - name: "Fixture scope"
+            description: "function, module, class, session - when to use each."
+          - name: "Teardown with yield"
+            description: "Setup before yield, teardown after."
+          - name: "Built-in fixtures"
+            description: "tmp_path, capsys, monkeypatch - what pytest offers."
+
+  - caseId: engeto-testing-005-parametrize
+    context:
+      level: beginner-intermediate
+      timeBudgetMinutes: 60
+      preferences: [practical, hands-on]
+      constraints: ["knows fixtures"]
+      parentLesson: "Fixtures and Environment"
+      lessonNumber: 16
+      partNumber: 2
+
+    expectedScenario:
+      mustHave:
+        - "Learner role: developer with repeating tests"
+        - "Context: same test with different data"
+        - "Concrete goal: use parametrization"
+      mustAvoid:
+        - "pytest-lazy-fixture"
+        - "Dynamic parametrization"
+        - "Indirect parametrization"
+      golden:
+        summary: |
+          You have tests that differ only in input data.
+          Parametrization - how to write one test for many cases.
+
+    expectedConcepts:
+      mustHave:
+        - "@pytest.mark.parametrize"
+        - "Multiple parameters"
+        - "IDs for readability"
+        - "Combination with fixtures"
+      mustAvoid:
+        - "Indirect parametrization"
+        - "Dynamic test generation"
+        - "pytest_generate_tests"
+      golden:
+        concepts:
+          - name: "@pytest.mark.parametrize"
+            description: "One test, many inputs - basic usage."
+          - name: "Multiple parameters"
+            description: "How to parametrize multiple arguments at once."
+          - name: "IDs"
+            description: "Readable test case names."
+          - name: "Parametrize + fixtures"
+            description: "How to combine both techniques."
+
+  - caseId: engeto-testing-006-mocking
+    context:
+      level: beginner-intermediate
+      timeBudgetMinutes: 60
+      preferences: [practical, hands-on]
+      constraints: ["knows fixtures and parametrization"]
+      parentLesson: "Fixtures and Environment"
+      lessonNumber: 16
+      partNumber: 3
+
+    expectedScenario:
+      mustHave:
+        - "Learner role: developer testing code with dependencies"
+        - "Context: test must not call real API/DB"
+        - "Concrete goal: mock dependencies"
+      mustAvoid:
+        - "VCR/responses for HTTP"
+        - "Async mocking"
+        - "Mock auto-spec advanced"
+      golden:
+        summary: |
+          Your code calls API or database - you can't test it for real.
+          Mocking - how to replace dependencies with test doubles.
+
+    expectedConcepts:
+      mustHave:
+        - "unittest.mock basics"
+        - "pytest monkeypatch"
+        - "Mock vs patch"
+        - "Mock assertions (call_args, assert_called)"
+      mustAvoid:
+        - "AsyncMock"
+        - "responses/httpretty"
+        - "Auto-spec details"
+      golden:
+        concepts:
+          - name: "Mock object"
+            description: "Test double - replaces real object."
+          - name: "patch and monkeypatch"
+            description: "Two ways to replace dependencies."
+          - name: "Mock assertions"
+            description: "assert_called, call_args - call verification."
+          - name: "When to mock"
+            description: "External services, slow operations, non-deterministic."
+
+  # ===========================================================================
+  # LESSON 17: Introduction to Django Testing (Testing)
+  # Original content: Django TestCase, testing views, URL, ORM
+  # ===========================================================================
+
+  - caseId: engeto-testing-007-django-intro
+    context:
+      level: beginner-intermediate
+      timeBudgetMinutes: 60
+      preferences: [practical, hands-on]
+      constraints: ["knows pytest and Django"]
+      parentLesson: "Introduction to Django Testing"
+      lessonNumber: 17
+      partNumber: 1
+
+    expectedScenario:
+      mustHave:
+        - "Learner role: Django developer starting with testing"
+        - "Context: has Django app, wants to test it"
+        - "Concrete goal: set up Django test environment"
+      mustAvoid:
+        - "Selenium/browser testing"
+        - "API testing tools"
+        - "Load testing"
+      golden:
+        summary: |
+          You know pytest and Django. Now you'll connect them - how to test
+          Django application with pytest-django.
+
+    expectedConcepts:
+      mustHave:
+        - "pytest-django setup"
+        - "Test database"
+        - "Django TestCase vs pytest"
+        - "Running Django tests"
+      mustAvoid:
+        - "Selenium"
+        - "API testing (DRF)"
+        - "Factory Boy (for now)"
+      golden:
+        concepts:
+          - name: "pytest-django"
+            description: "Plugin for pytest integration with Django."
+          - name: "Test database"
+            description: "How Django creates test DB."
+          - name: "TestCase vs pytest"
+            description: "Django TestCase, TransactionTestCase, or pure pytest."
+          - name: "conftest.py for Django"
+            description: "Basic fixtures for Django projects."
+
+  - caseId: engeto-testing-008-views
+    context:
+      level: beginner-intermediate
+      timeBudgetMinutes: 60
+      preferences: [practical, hands-on]
+      constraints: ["knows pytest-django"]
+      parentLesson: "Introduction to Django Testing"
+      lessonNumber: 17
+      partNumber: 2
+
+    expectedScenario:
+      mustHave:
+        - "Learner role: Django developer testing HTTP"
+        - "Context: has views, needs to test them"
+        - "Concrete goal: test views and URL routing"
+      mustAvoid:
+        - "Browser testing"
+        - "JavaScript testing"
+        - "WebSocket testing"
+      golden:
+        summary: |
+          You have Django tests set up and now you'll learn to test views -
+          HTTP requests, responses, URL routing.
+
+    expectedConcepts:
+      mustHave:
+        - "Django test client"
+        - "Testing GET/POST requests"
+        - "Response assertions"
+        - "URL reverse in tests"
+      mustAvoid:
+        - "Live server tests"
+        - "WebSocket testing"
+        - "Async views testing"
+      golden:
+        concepts:
+          - name: "Test client"
+            description: "client fixture - HTTP simulation without server."
+          - name: "GET and POST"
+            description: "client.get(), client.post() - how to test."
+          - name: "Response assertions"
+            description: "status_code, context, templates, redirects."
+          - name: "URL testing"
+            description: "reverse(), resolve() - routing testing."
+
+  - caseId: engeto-testing-009-orm
+    context:
+      level: beginner-intermediate
+      timeBudgetMinutes: 60
+      preferences: [practical, hands-on]
+      constraints: ["knows view testing"]
+      parentLesson: "Introduction to Django Testing"
+      lessonNumber: 17
+      partNumber: 3
+
+    expectedScenario:
+      mustHave:
+        - "Learner role: Django developer testing data"
+        - "Context: needs to test database operations"
+        - "Concrete goal: test models and ORM operations"
+      mustAvoid:
+        - "Factory Boy advanced"
+        - "Fixtures (Django fixtures vs pytest)"
+        - "Multiple databases"
+      golden:
+        summary: |
+          You test views and now you need test data.
+          How to test models and ORM in Django tests.
+
+    expectedConcepts:
+      mustHave:
+        - "@pytest.mark.django_db"
+        - "Creating test data"
+        - "Testing model methods"
+        - "QuerySet assertions"
+      mustAvoid:
+        - "Django fixtures (JSON)"
+        - "Factory Boy patterns"
+        - "Database transactions"
+      golden:
+        concepts:
+          - name: "@pytest.mark.django_db"
+            description: "Marker for tests that need DB."
+          - name: "Test data"
+            description: "How to create objects for tests."
+          - name: "Model tests"
+            description: "Testing custom methods, __str__, validation."
+          - name: "QuerySet tests"
+            description: "Assertions on queryset results."
+
+  # ===========================================================================
+  # LESSON 18: Testing Django Applications (Testing)
+  # Original content: Model tests, form tests, validation, test DB
+  # ===========================================================================
+
+  - caseId: engeto-testing-010-models
+    context:
+      level: intermediate
+      timeBudgetMinutes: 60
+      preferences: [practical, hands-on]
+      constraints: ["knows Django testing basics"]
+      parentLesson: "Testing Django Applications"
+      lessonNumber: 18
+      partNumber: 1
+
+    expectedScenario:
+      mustHave:
+        - "Learner role: Django developer with complex models"
+        - "Context: models have custom logic"
+        - "Concrete goal: thoroughly test model layer"
+      mustAvoid:
+        - "Multi-database testing"
+        - "Migration testing"
+        - "Database constraints testing"
+      golden:
+        summary: |
+          You know Django testing basics. Now you'll learn to thoroughly test
+          model layer - custom methods, signals, managers.
+
+    expectedConcepts:
+      mustHave:
+        - "Testing custom model methods"
+        - "Testing model validation"
+        - "Testing model signals"
+        - "Testing custom managers"
+      mustAvoid:
+        - "Migration testing"
+        - "Database constraints"
+        - "Multi-DB setups"
+      golden:
+        concepts:
+          - name: "Custom methods"
+            description: "How to test business logic in models."
+          - name: "Model validation"
+            description: "clean(), validators - testing validation rules."
+          - name: "Signals"
+            description: "How to test pre_save, post_save and more."
+          - name: "Custom managers"
+            description: "Testing QuerySet methods and manager logic."
+
+  - caseId: engeto-testing-011-forms
+    context:
+      level: intermediate
+      timeBudgetMinutes: 60
+      preferences: [practical, hands-on]
+      constraints: ["knows model testing"]
+      parentLesson: "Testing Django Applications"
+      lessonNumber: 18
+      partNumber: 2
+
+    expectedScenario:
+      mustHave:
+        - "Learner role: Django developer testing user input"
+        - "Context: has forms with validation"
+        - "Concrete goal: test forms and validation"
+      mustAvoid:
+        - "Formset testing"
+        - "Wizard form testing"
+        - "File upload testing (complex)"
+      golden:
+        summary: |
+          You have model tests. Now you'll learn to test forms -
+          validation, clean methods, custom logic.
+
+    expectedConcepts:
+      mustHave:
+        - "Form instance testing"
+        - "is_valid() and errors"
+        - "clean_ methods testing"
+        - "ModelForm specific testing"
+      mustAvoid:
+        - "Formsets"
+        - "Multi-step forms"
+        - "File uploads (basic)"
+      golden:
+        concepts:
+          - name: "Form testing basics"
+            description: "How to instantiate and test forms."
+          - name: "Validation testing"
+            description: "is_valid(), errors - testing error states."
+          - name: "clean_ methods"
+            description: "Testing custom validation logic."
+          - name: "ModelForm testing"
+            description: "save(), instance - ModelForm test specifics."
+
+  - caseId: engeto-testing-012-integration
+    context:
+      level: intermediate
+      timeBudgetMinutes: 60
+      preferences: [practical]
+      constraints: ["knows unit testing in Django"]
+      parentLesson: "Testing Django Applications"
+      lessonNumber: 18
+      partNumber: 3
+
+    expectedScenario:
+      mustHave:
+        - "Learner role: developer testing entire flows"
+        - "Context: tests individual components, needs integration"
+        - "Concrete goal: write integration tests in Django"
+      mustAvoid:
+        - "E2E testing"
+        - "Browser automation"
+        - "Performance testing"
+      golden:
+        summary: |
+          You have unit tests. Now you need to verify that components work
+          together - integration tests for Django.
+
+    expectedConcepts:
+      mustHave:
+        - "Unit vs integration in Django context"
+        - "Testing entire request flows"
+        - "Test database management"
+        - "When to use TransactionTestCase"
+      mustAvoid:
+        - "E2E tests"
+        - "Selenium"
+        - "Performance testing"
+      golden:
+        concepts:
+          - name: "Unit vs integration"
+            description: "When to isolate and when to test cooperation."
+          - name: "Request flow tests"
+            description: "From URL to response - entire path."
+          - name: "Test database"
+            description: "Rollback vs truncate, TransactionTestCase."
+          - name: "Test organization"
+            description: "How to structure unit and integration tests."
+
+  # ===========================================================================
+  # LESSON 19: HTML + CSS Basics (HTML, CSS)
+  # Original content: layout, variables, box model, positioning, selectors
+  # ===========================================================================
+
+  - caseId: engeto-frontend-001-html
+    context:
+      level: beginner
+      timeBudgetMinutes: 60
+      preferences: [practical, hands-on]
+      constraints: []
+      parentLesson: "HTML + CSS Basics"
+      lessonNumber: 19
+      partNumber: 1
+
+    expectedScenario:
+      mustHave:
+        - "Learner role: backend developer learning frontend"
+        - "Context: needs to create web pages"
+        - "Concrete goal: write semantic HTML"
+      mustAvoid:
+        - "Deprecated HTML (tables for layout)"
+        - "SVG/Canvas"
+        - "Web Components"
+      golden:
+        summary: |
+          You're a backend developer and need frontend basics.
+          Let's start with HTML - web page structure.
+
+    expectedConcepts:
+      mustHave:
+        - "HTML document structure"
+        - "Semantic elements (header, nav, article)"
+        - "Form elements"
+        - "Links and media"
+      mustAvoid:
+        - "SVG inline"
+        - "HTML5 APIs"
+        - "Accessibility details"
+      golden:
+        concepts:
+          - name: "HTML structure"
+            description: "DOCTYPE, html, head, body - basic skeleton."
+          - name: "Semantic HTML"
+            description: "header, nav, main, article, footer - element meaning."
+          - name: "Forms"
+            description: "form, input, textarea, select - data collection."
+          - name: "Media and links"
+            description: "img, a, video - external content."
+
+  - caseId: engeto-frontend-002-css-basics
+    context:
+      level: beginner
+      timeBudgetMinutes: 60
+      preferences: [practical, hands-on]
+      constraints: ["knows HTML"]
+      parentLesson: "HTML + CSS Basics"
+      lessonNumber: 19
+      partNumber: 2
+
+    expectedScenario:
+      mustHave:
+        - "Learner role: developer styling HTML"
+        - "Context: has HTML, needs appearance"
+        - "Concrete goal: master CSS selectors and properties"
+      mustAvoid:
+        - "CSS preprocessors (SASS)"
+        - "CSS-in-JS"
+        - "Animations (details)"
+      golden:
+        summary: |
+          You have HTML and now you need to style it.
+          CSS basics - selectors, properties, box model.
+
+    expectedConcepts:
+      mustHave:
+        - "CSS selectors (element, class, id)"
+        - "Basic properties (color, background, font)"
+        - "Specificity and cascade"
+        - "Ways to include CSS"
+      mustAvoid:
+        - "CSS variables (next course)"
+        - "Preprocessors"
+        - "CSS Grid (next course)"
+      golden:
+        concepts:
+          - name: "Selectors"
+            description: "element, .class, #id, combinators."
+          - name: "Basic properties"
+            description: "color, background, font-family, font-size."
+          - name: "Specificity"
+            description: "Which rules win and why."
+          - name: "Including CSS"
+            description: "inline, internal, external stylesheet."
+
+  - caseId: engeto-frontend-003-box-model
+    context:
+      level: beginner
+      timeBudgetMinutes: 60
+      preferences: [practical, hands-on]
+      constraints: ["knows CSS basics"]
+      parentLesson: "HTML + CSS Basics"
+      lessonNumber: 19
+      partNumber: 3
+
+    expectedScenario:
+      mustHave:
+        - "Learner role: developer laying out page"
+        - "Context: needs to understand how elements take up space"
+        - "Concrete goal: master box model and positioning"
+      mustAvoid:
+        - "Grid layout (next course)"
+        - "Flexbox details (next course)"
+        - "CSS transforms"
+      golden:
+        summary: |
+          You know selectors and properties. Now you'll understand how elements
+          take up space - box model and basic positioning.
+
+    expectedConcepts:
+      mustHave:
+        - "Box model - content, padding, border, margin"
+        - "box-sizing: border-box"
+        - "display: block, inline, inline-block"
+        - "position: static, relative, absolute, fixed"
+      mustAvoid:
+        - "Sticky positioning"
+        - "Flexbox (basic mention)"
+        - "Multi-column layout"
+      golden:
+        concepts:
+          - name: "Box model"
+            description: "content, padding, border, margin - element layers."
+          - name: "box-sizing"
+            description: "content-box vs border-box - how to calculate size."
+          - name: "Display"
+            description: "block, inline, inline-block - document flow."
+          - name: "Position"
+            description: "static, relative, absolute, fixed - removing from flow."
+
+  # ===========================================================================
+  # LESSON 20: CSS (HTML, CSS)
+  # Original content: Grid, flexbox, media-queries, responsiveness, mobile-first, BEM
+  # ===========================================================================
+
+  - caseId: engeto-frontend-004-flexbox
+    context:
+      level: beginner-intermediate
+      timeBudgetMinutes: 60
+      preferences: [practical, hands-on]
+      constraints: ["knows box model"]
+      parentLesson: "CSS"
+      lessonNumber: 20
+      partNumber: 1
+
+    expectedScenario:
+      mustHave:
+        - "Learner role: developer creating layouts"
+        - "Context: positioning is not enough for modern layouts"
+        - "Concrete goal: master Flexbox"
+      mustAvoid:
+        - "Legacy layout techniques"
+        - "CSS Grid (next course)"
+        - "Subgrid"
+      golden:
+        summary: |
+          You know box model and positioning. Now you'll learn Flexbox -
+          modern way to create one-dimensional layouts.
+
+    expectedConcepts:
+      mustHave:
+        - "Flex container and flex items"
+        - "justify-content and align-items"
+        - "flex-grow, flex-shrink, flex-basis"
+        - "Flex direction and wrap"
+      mustAvoid:
+        - "Nested flexbox complexity"
+        - "Grid (mention, but no details)"
+        - "Order property"
+      golden:
+        concepts:
+          - name: "Flex container"
+            description: "display: flex, main and cross axis."
+          - name: "Alignment"
+            description: "justify-content, align-items - alignment."
+          - name: "Flex properties"
+            description: "flex-grow, shrink, basis - how items react."
+          - name: "Direction and wrap"
+            description: "flex-direction, flex-wrap - item flow."
+
+  - caseId: engeto-frontend-005-grid
+    context:
+      level: beginner-intermediate
+      timeBudgetMinutes: 60
+      preferences: [practical, hands-on]
+      constraints: ["knows Flexbox"]
+      parentLesson: "CSS"
+      lessonNumber: 20
+      partNumber: 2
+
+    expectedScenario:
+      mustHave:
+        - "Learner role: developer creating complex layouts"
+        - "Context: Flexbox is one-dimensional, needs 2D"
+        - "Concrete goal: master CSS Grid"
+      mustAvoid:
+        - "Subgrid"
+        - "Masonry layout"
+        - "Grid template areas (complex)"
+      golden:
+        summary: |
+          Flexbox is for 1D layouts. For 2D you need CSS Grid -
+          the most powerful layout system in CSS.
+
+    expectedConcepts:
+      mustHave:
+        - "Grid container and grid items"
+        - "grid-template-columns/rows"
+        - "gap and alignment"
+        - "Grid placement (line-based)"
+      mustAvoid:
+        - "Subgrid"
+        - "Named grid areas"
+        - "Complex auto-placement"
+      golden:
+        concepts:
+          - name: "Grid container"
+            description: "display: grid, row and column definitions."
+          - name: "Template"
+            description: "grid-template-columns/rows, fr unit, repeat()."
+          - name: "Gap and alignment"
+            description: "gap, justify-items, align-items - spacing and alignment."
+          - name: "Placement"
+            description: "grid-column, grid-row - item positioning."
+
+  - caseId: engeto-frontend-006-responsive
+    context:
+      level: beginner-intermediate
+      timeBudgetMinutes: 60
+      preferences: [practical, hands-on]
+      constraints: ["knows Flexbox and Grid"]
+      parentLesson: "CSS"
+      lessonNumber: 20
+      partNumber: 3
+
+    expectedScenario:
+      mustHave:
+        - "Learner role: developer creating for different devices"
+        - "Context: web must work on mobile and desktop"
+        - "Concrete goal: create responsive design"
+      mustAvoid:
+        - "CSS frameworks (Bootstrap, Tailwind)"
+        - "Container queries"
+        - "CSS Houdini"
+      golden:
+        summary: |
+          You know layouts and now you need to adapt them to different devices.
+          Media queries, mobile-first, and BEM methodology.
+
+    expectedConcepts:
+      mustHave:
+        - "Media queries (@media)"
+        - "Mobile-first approach"
+        - "Viewport meta tag"
+        - "BEM methodology"
+      mustAvoid:
+        - "Container queries"
+        - "CSS frameworks"
+        - "SCSS/LESS"
+      golden:
+        concepts:
+          - name: "Media queries"
+            description: "@media screen and (min-width) - breakpoints."
+          - name: "Mobile-first"
+            description: "Why start from mobile and expand."
+          - name: "Viewport"
+            description: "meta viewport tag - proper scaling on mobile."
+          - name: "BEM"
+            description: "Block-Element-Modifier - CSS class organization."
+
+  # ===========================================================================
+  # LESSON 21: JavaScript (JavaScript)
+  # Original content: Basics review, Asynchronous JavaScript, events and selectors, CSS, DOM
+  # ===========================================================================
+
+  - caseId: engeto-js-001-basics
+    context:
+      level: beginner-intermediate
+      timeBudgetMinutes: 60
+      preferences: [practical, hands-on]
+      constraints: ["knows HTML and CSS"]
+      parentLesson: "JavaScript"
+      lessonNumber: 21
+      partNumber: 1
+
+    expectedScenario:
+      mustHave:
+        - "Learner role: Python developer learning JavaScript"
+        - "Context: knows programming, needs JS syntax"
+        - "Concrete goal: master JavaScript basics"
+      mustAvoid:
+        - "TypeScript"
+        - "Node.js"
+        - "Frameworks (React, Vue)"
+      golden:
+        summary: |
+          You know Python and now you'll learn JavaScript - the web browser language.
+          Syntax basics and differences from Python.
+
+    expectedConcepts:
+      mustHave:
+        - "Variables (let, const, var)"
+        - "Data types and operators"
+        - "Functions (function, arrow functions)"
+        - "Objects and arrays"
+      mustAvoid:
+        - "Classes (mention)"
+        - "Modules"
+        - "This keyword details"
+      golden:
+        concepts:
+          - name: "Variables"
+            description: "let, const, var - differences and when to use each."
+          - name: "Types and operators"
+            description: "String, Number, Boolean, null, undefined, ==vs===."
+          - name: "Functions"
+            description: "function declaration, expression, arrow functions."
+          - name: "Objects and arrays"
+            description: "Literals, property access, array methods."
+
+  - caseId: engeto-js-002-dom
+    context:
+      level: beginner-intermediate
+      timeBudgetMinutes: 60
+      preferences: [practical, hands-on]
+      constraints: ["knows JS basics"]
+      parentLesson: "JavaScript"
+      lessonNumber: 21
+      partNumber: 2
+
+    expectedScenario:
+      mustHave:
+        - "Learner role: developer interacting with page"
+        - "Context: needs to change HTML/CSS from JS"
+        - "Concrete goal: master DOM and events"
+      mustAvoid:
+        - "Virtual DOM"
+        - "Shadow DOM"
+        - "Custom Elements"
+      golden:
+        summary: |
+          You know JS syntax and now you'll connect it with the page.
+          DOM - how JavaScript changes HTML and responds to events.
+
+    expectedConcepts:
+      mustHave:
+        - "Selectors (querySelector, getElementById)"
+        - "Element manipulation (innerHTML, classList)"
+        - "Event listeners"
+        - "Event object and propagation"
+      mustAvoid:
+        - "Event delegation patterns"
+        - "Custom events"
+        - "MutationObserver"
+      golden:
+        concepts:
+          - name: "Selectors"
+            description: "querySelector, querySelectorAll, getElementById."
+          - name: "Manipulation"
+            description: "innerHTML, textContent, classList, style."
+          - name: "Events"
+            description: "addEventListener, click, submit, input."
+          - name: "Event object"
+            description: "event.target, preventDefault(), propagation."
+
+  - caseId: engeto-js-003-async
+    context:
+      level: beginner-intermediate
+      timeBudgetMinutes: 60
+      preferences: [practical, hands-on]
+      constraints: ["knows DOM"]
+      parentLesson: "JavaScript"
+      lessonNumber: 21
+      partNumber: 3
+
+    expectedScenario:
+      mustHave:
+        - "Learner role: developer working with API"
+        - "Context: needs to load data without refresh"
+        - "Concrete goal: master asynchronous JavaScript"
+      mustAvoid:
+        - "Web Workers"
+        - "Service Workers"
+        - "WebSockets"
+      golden:
+        summary: |
+          You know DOM and now you'll learn asynchronous operations -
+          how to load data from API without page refresh.
+
+    expectedConcepts:
+      mustHave:
+        - "Callbacks and callback hell"
+        - "Promises"
+        - "async/await"
+        - "fetch API"
+      mustAvoid:
+        - "Axios"
+        - "AbortController"
+        - "Error boundaries"
+      golden:
+        concepts:
+          - name: "Callbacks"
+            description: "Asynchronous functions, callback hell problem."
+          - name: "Promises"
+            description: "then(), catch(), finally() - solving callbacks."
+          - name: "async/await"
+            description: "Syntactic sugar for Promises - cleaner code."
+          - name: "fetch"
+            description: "HTTP requests from browser, JSON parsing."
+
+  # ===========================================================================
+  # LESSON 22: JavaScript + jQuery (JavaScript)
+  # Original content: Form validation and jQuery
+  # ===========================================================================
+
+  - caseId: engeto-js-004-form-validation
+    context:
+      level: beginner-intermediate
+      timeBudgetMinutes: 60
+      preferences: [practical, hands-on]
+      constraints: ["knows DOM and events"]
+      parentLesson: "JavaScript + jQuery"
+      lessonNumber: 22
+      partNumber: 1
+
+    expectedScenario:
+      mustHave:
+        - "Learner role: developer validating user input"
+        - "Context: forms need client-side validation"
+        - "Concrete goal: implement form validation in JS"
+      mustAvoid:
+        - "Validation libraries"
+        - "FormData API details"
+        - "File input handling"
+      golden:
+        summary: |
+          You know DOM and events. Now you'll learn to validate forms
+          in JavaScript - UX improvement before submitting to server.
+
+    expectedConcepts:
+      mustHave:
+        - "HTML5 validation (required, pattern)"
+        - "JavaScript validation"
+        - "Displaying error messages"
+        - "preventDefault() on error"
+      mustAvoid:
+        - "Yup, Zod"
+        - "FormData advanced"
+        - "AJAX form submit"
+      golden:
+        concepts:
+          - name: "HTML5 validation"
+            description: "required, pattern, type=email - built-in validation."
+          - name: "Custom validation"
+            description: "JavaScript checks - length, format, match."
+          - name: "Error messages"
+            description: "How to display and hide error messages."
+          - name: "UX patterns"
+            description: "When to validate (blur, submit), inline vs summary."
+
+  - caseId: engeto-js-005-jquery-intro
+    context:
+      level: beginner-intermediate
+      timeBudgetMinutes: 60
+      preferences: [practical, hands-on]
+      constraints: ["knows vanilla JS"]
+      parentLesson: "JavaScript + jQuery"
+      lessonNumber: 22
+      partNumber: 2
+
+    expectedScenario:
+      mustHave:
+        - "Learner role: developer working with legacy code"
+        - "Context: will encounter jQuery in existing projects"
+        - "Concrete goal: read and write basic jQuery code"
+      mustAvoid:
+        - "jQuery plugins development"
+        - "jQuery UI"
+        - "jQuery vs modern frameworks debate"
+      golden:
+        summary: |
+          You know vanilla JS and now you'll meet jQuery -
+          a library you'll find in many existing projects.
+
+    expectedConcepts:
+      mustHave:
+        - "What is jQuery and why it was created"
+        - "$(selector) and jQuery object"
+        - "Basic manipulation (html, css, addClass)"
+        - "Event handling with jQuery"
+      mustAvoid:
+        - "jQuery plugins"
+        - "AJAX with jQuery ($.ajax)"
+        - "jQuery UI"
+      golden:
+        concepts:
+          - name: "jQuery history"
+            description: "Why it was created, why it's still relevant."
+          - name: "Selectors"
+            description: "$() - jQuery wrapper, CSS selectors."
+          - name: "Manipulation"
+            description: ".html(), .css(), .addClass() - basic methods."
+          - name: "Events"
+            description: ".on(), .click() - event handling the jQuery way."
+
+  - caseId: engeto-js-006-jquery-practice
+    context:
+      level: beginner-intermediate
+      timeBudgetMinutes: 60
+      preferences: [practical, hands-on]
+      constraints: ["knows jQuery basics"]
+      parentLesson: "JavaScript + jQuery"
+      lessonNumber: 22
+      partNumber: 3
+
+    expectedScenario:
+      mustHave:
+        - "Learner role: developer combining jQuery with validation"
+        - "Context: needs interactive forms"
+        - "Concrete goal: practical use of jQuery for forms"
+      mustAvoid:
+        - "jQuery validate plugin"
+        - "jQuery AJAX"
+        - "jQuery animations"
+      golden:
+        summary: |
+          You know jQuery basics and form validation. Now you'll combine them -
+          practical exercise with interactive forms.
+
+    expectedConcepts:
+      mustHave:
+        - "jQuery form handling"
+        - "Validation with jQuery"
+        - "Dynamic DOM updates"
+        - "jQuery vs vanilla JS - when to use what"
+      mustAvoid:
+        - "jQuery plugins"
+        - "AJAX (covered elsewhere)"
+        - "jQuery Mobile"
+      golden:
+        concepts:
+          - name: "Form handling"
+            description: ".val(), .serialize() - working with forms."
+          - name: "Validation with jQuery"
+            description: "Combining jQuery selectors and validation logic."
+          - name: "Dynamic updates"
+            description: ".show(), .hide(), .toggle() - interactivity."
+          - name: "jQuery vs vanilla"
+            description: "When to use jQuery and when vanilla JS is enough."
+
